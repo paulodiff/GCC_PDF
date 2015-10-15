@@ -1,0 +1,28 @@
+<?xml version='1.0'?>
+<!-- File di configurazione -->
+<pdfdoc>
+     <img imgFileName="c:\test\VS\logocomune.jpg" startX="50" startY="750" imgScalePercent="30">dummy</img>
+     <img imgFileName="c:\test\VS\logocomune2.jpg" startX="500" startY="50" imgScalePercent="30">dummy</img>
+     <text startX="100" startY="100" fontSize="14">100x100y</text>
+     <text startX="100" startY="200" fontSize="18">100x200y</text>
+     <text startX="100" startY="300" fontSize="12">100x300y</text>
+     <text startX="100" startY="400" fontSize="12">100x400y</text>
+     <text startX="100" startY="500" fontSize="12">100x500y</text>
+     <text startX="100" startY="550" fontSize="12">Oggetto: Linea 100x 550y</text>
+     <text startX="100" startY="600" fontSize="12">100x600y</text>
+     <text startX="100" startY="700" fontSize="12">100x700y</text>
+     <text startX="100" startY="700" fontSize="12">Oggeto test 123 123 123 123 123 123 123 123 123 123 123 100x700y</text>
+     <line startX="1" startY="100" endX="550" endY="100">dummy</line>
+     <line startX="1" startY="200" endX="550" endY="200">dummy</line>
+     <line startX="1" startY="300" endX="550" endY="300">dummy</line>
+     <line startX="1" startY="400" endX="550" endY="400">dummy</line>
+     <line startX="1" startY="500" endX="550" endY="500">dummy</line>
+     <line startX="1" startY="600" endX="550" endY="600">dummy</line>
+     <line startX="1" startY="700" endX="550" endY="700">dummy</line>
+     <line startX="1" startY="750" endX="550" endY="750">dummy</line>
+     <line startX="100" startY="50" endX="100" endY="750">dummy</line>
+     <line startX="200" startY="50" endX="200" endY="750">dummy</line>
+     <line startX="300" startY="50" endX="300" endY="750">dummy</line>
+     <line startX="400" startY="50" endX="400" endY="750">dummy</line>
+     <line startX="500" startY="50" endX="500" endY="750">dummy</line>
+</pdfdoc>

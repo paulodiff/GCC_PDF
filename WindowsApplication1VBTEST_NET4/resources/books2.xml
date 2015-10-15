@@ -1,0 +1,19 @@
+<?xml version='1.0'?>
+   <!-- This file represents a fragment of a book store inventory database -->
+<pdfdoc>
+     <book genre="autobiography">
+       <title>The Autobiography of Benjamin Franklin</title>
+       <author>
+         <first-name>Benjamin</first-name>
+         <last-name>Franklin</last-name>
+       </author>
+       <price>8.99</price>
+     </book>
+     <book genre="philosophy">
+       <title>The Gorgias</title>
+       <author>
+         <name>Plato</name>
+       </author>
+       <price>9.99</price>
+     </book>
+</pdfdoc>

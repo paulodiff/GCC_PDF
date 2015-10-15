@@ -1,0 +1,64 @@
+<?xml version='1.0'?>
+<!-- File di configurazione -->
+<pdfdoc>
+     <text1 startX="100" startY="100" fontSize="14">100x100y</text1>
+     <text1 startX="100" startY="200" fontSize="18">100x200y</text1>
+     <text1 startX="100" startY="300" fontSize="12">100x300y</text1>
+     <text1 startX="100" startY="400" fontSize="12">100x400y</text1>
+     <text1 startX="100" startY="500" fontSize="12">100x500y</text1>
+     <text1 startX="100" startY="550" fontSize="12">Oggetto: Linea 100x 550y</text1>
+     <text1 startX="100" startY="600" fontSize="12">100x600y</text1>
+     <text1 startX="100" startY="700" fontSize="12">100x700y</text1>
+     <text1 startX="100" startY="700" fontSize="12">Oggeto test 123 123 123 123 123 123 123 123 123 123 123 100x700y</text1>
+     <line1 startX="1" startY="100" endX="550" endY="100">dummy</line1>
+     <line1 startX="1" startY="200" endX="550" endY="200">dummy</line1>
+     <line1 startX="1" startY="300" endX="550" endY="300">dummy</line1>
+     <line1 startX="1" startY="400" endX="550" endY="400">dummy</line1>
+     <line1 startX="1" startY="500" endX="550" endY="500">dummy</line1>
+     <line1 startX="1" startY="600" endX="550" endY="600">dummy</line1>
+     <line1 startX="1" startY="700" endX="550" endY="700">dummy</line1>
+     <line1 startX="1" startY="760" endX="550" endY="760">dummy</line1>
+
+     <line1 startX="100" startY="50" endX="100" endY="750">dummy</line1>
+     <line1 startX="200" startY="50" endX="200" endY="750">dummy</line1>
+     <line1 startX="300" startY="50" endX="300" endY="750">dummy</line1>
+     <line1 startX="400" startY="50" endX="400" endY="750">dummy</line1>
+     <line1 startX="500" startY="50" endX="500" endY="750">dummy</line1>
+
+
+
+     <rem>immagini in alto a sinistra ed in fondo a destra</rem>
+     <img imgFileName="c:\test\VS\logocomune.jpg" startX="30" startY="760" imgScalePercent="30">dummy</img>
+     <img imgFileName="c:\test\VS\logocomune2.jpg" startX="500" startY="50" imgScalePercent="50">dummy</img>
+
+
+     <rem>blocco in alto</rem>
+     <line startX="20" startY="760" endX="550" endY="760">dummy</line>
+     <line startX="80" startY="760" endX="80" endY="720">dummy</line>
+     <line startX="240" startY="760" endX="240" endY="720">dummy</line>
+     <line startX="380" startY="760" endX="380" endY="720">dummy</line>
+
+     <text startX="85" startY="750" fontSize="8">Comune di Rimini</text>
+     <text startX="245" startY="750" fontSize="8">Area XXX</text>
+     <text startX="245" startY="740" fontSize="8">Settore/Servizio XXX</text>
+     <text startX="245" startY="730" fontSize="8">Ufficio XXX</text>
+
+     <text startX="385" startY="750" fontSize="6">Indirizzo</text>
+     <text startX="385" startY="742" fontSize="6">Telefono</text>
+     <text startX="385" startY="734" fontSize="6">Sito</text>
+     <text startX="385" startY="726" fontSize="6">Email</text>
+     <text startX="385" startY="718" fontSize="6">Altro</text>
+
+     <text startX="100" startY="600" fontSize="10">Oggetto: Dichiarazione di conformita' all'originale della copia di atti e documenti.</text>
+
+     <text startX="100" startY="560" fontSize="10">Il sottoscritto dichiara che i seguenti documenti digitali identificati da nome del file ed impronta</text>
+     <text startX="100" startY="540" fontSize="10">digitale sono conformi agli originali.</text>
+     <text startX="100" startY="520" fontSize="10">Nota: l'impronta digitale  calcolata attraverso algoritmo SHA-256</text>
+
+     <text startX="400" startY="160" fontSize="10">Dott. Mario Rossi</text>
+     <text startX="400" startY="150" fontSize="10">Il documento firmato digitalmente</text>
+     <text startX="40" startY="100" fontSize="10">TEST!</text>
+
+     <text startX="10" startY="10" fontSize="8">Generato automaticamente da: Generatore di Copia Conforme - Sistema Informatico - Comune di Rimini</text>
+
+</pdfdoc>

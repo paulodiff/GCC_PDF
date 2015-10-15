@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="WindowsApplication1VBTEST_NET4.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+        <sectionGroup name="applicationSettings" type="System.Configuration.ApplicationSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="WindowsApplication1VBTEST_NET4.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <system.diagnostics>
+        <sources>
+            <!-- Questa sezione definisce la configurazione di registrazione per My.Application.Log -->
+            <source name="DefaultSource" switchName="DefaultSwitch">
+                <listeners>
+                    <add name="FileLog"/>
+                    <!-- Per scrivere nel log eventi dell'applicazione, rimuovere il commento dalla sezione sottostante -->
+                    <!--<add name="EventLog"/>-->
+                </listeners>
+            </source>
+        </sources>
+        <switches>
+            <add name="DefaultSwitch" value="Information" />
+        </switches>
+        <sharedListeners>
+            <add name="FileLog"
+                 type="Microsoft.VisualBasic.Logging.FileLogTraceListener, Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                 initializeData="FileLogWriter"/>
+            <!-- Per scrivere nel log eventi dell'applicazione, rimuovere il commento dalla sezione sottostante e sostituire APPLICATION_NAME con il nome dell'applicazione -->
+            <!--<add name="EventLog" type="System.Diagnostics.EventLogTraceListener" initializeData="APPLICATION_NAME"/> -->
+        </sharedListeners>
+    </system.diagnostics>
+    <userSettings>
+        <WindowsApplication1VBTEST_NET4.My.MySettings>
+            <setting name="Setting" serializeAs="String">
+                <value>A1</value>
+            </setting>
+            <setting name="Setting1" serializeAs="String">
+                <value>A2</value>
+            </setting>
+            <setting name="Setting2" serializeAs="String">
+                <value>A3</value>
+            </setting>
+            <setting name="Setting3" serializeAs="String">
+                <value>A4</value>
+            </setting>
+            <setting name="TITOLO1" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="TITOLO2" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="OGGETTO" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="FIRMA1" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="FIRMA2" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="NOTE1" serializeAs="String">
+                <value />
+            </setting>
+            <setting name="NOTE2" serializeAs="String">
+                <value />
+            </setting>
+        </WindowsApplication1VBTEST_NET4.My.MySettings>
+    </userSettings>
+    <applicationSettings>
+        <WindowsApplication1VBTEST_NET4.My.MySettings>
+            <setting name="Connessione" serializeAs="String">
+                <value>A1STR.COM</value>
+            </setting>
+        </WindowsApplication1VBTEST_NET4.My.MySettings>
+    </applicationSettings>
+</configuration>

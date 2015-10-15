@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Connessione" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">sql-test</Value>
+    </Setting>
+    <Setting Name="XmlConfigFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\test\VS\config.xml</Value>
+    </Setting>
+    <Setting Name="DCCFolderName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">d:\tmp</Value>
+    </Setting>
+    <Setting Name="BatchMode" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="NOTE" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
