@@ -44,7 +44,6 @@ c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\bin\Deb
 c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\bin\Debug\itextsharp.pdfa.dll
 c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\bin\Debug\itextsharp.xtra.dll
 c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\bin\Debug\itextsharp.xml
-c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\WindowsApplication1VBTEST_NET4.vbprojResolveAssemblyReference.cache
 c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\WindowsApplication1VBTEST_NET4.Form1.resources
 c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\WindowsApplication1VBTEST_NET4.Resources.resources
 c:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\WindowsApplication1VBTEST_NET4.vbproj.GenerateResource.Cache

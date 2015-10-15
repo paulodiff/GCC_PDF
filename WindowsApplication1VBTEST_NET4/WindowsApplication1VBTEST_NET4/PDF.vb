@@ -46,9 +46,15 @@ Module PDF
         End Try
 
         ' puntatore ad elemento della tabella da visualizzare nel PDF
-        numOfPages = d.Count / maxTableItems + 1
+
+        maxTableItems = My.Settings.MAXTABLEITEMS
+
+        numOfPages = d.Count / maxTableItems
         globalCurTableItemIndex = 0
         localCurTableItemIndex = 0
+
+        Console.WriteLine("Numero di pagine da generare {0}", numOfPages)
+
 
         For i As Integer = 1 To numOfPages
 

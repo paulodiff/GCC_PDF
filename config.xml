@@ -57,7 +57,7 @@
 
      <text startX="400" startY="160" fontSize="10">Dott. Mario Rossi</text>
      <text startX="400" startY="150" fontSize="10">Il documento firmato digitalmente</text>
-     <text startX="40" startY="100" fontSize="10">TEST!</text>
+     <text1 startX="40" startY="100" fontSize="10">TEST!</text1>
 
      <text startX="10" startY="10" fontSize="8">Generato automaticamente da: Generatore di Copia Conforme - Sistema Informatico - Comune di Rimini</text>
 
