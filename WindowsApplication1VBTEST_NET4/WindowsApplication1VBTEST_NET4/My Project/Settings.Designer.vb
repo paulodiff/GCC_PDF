@@ -54,71 +54,71 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("sql-test")> _
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("sql-test")>  _
         Public ReadOnly Property Connessione() As String
             Get
-                Return CType(Me("Connessione"), String)
+                Return CType(Me("Connessione"),String)
             End Get
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("c:\test\VS\config.xml")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("c:\test\VS\config.xml")>  _
         Public Property XmlConfigFile() As String
             Get
-                Return CType(Me("XmlConfigFile"), String)
+                Return CType(Me("XmlConfigFile"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("XmlConfigFile") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("d:\tmp")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("d:\tmp")>  _
         Public Property DCCFolderName() As String
             Get
-                Return CType(Me("DCCFolderName"), String)
+                Return CType(Me("DCCFolderName"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("DCCFolderName") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("0")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
         Public Property BatchMode() As Integer
             Get
-                Return CType(Me("BatchMode"), Integer)
+                Return CType(Me("BatchMode"),Integer)
             End Get
-            Set(value As Integer)
+            Set
                 Me("BatchMode") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property NOTE() As String
             Get
-                Return CType(Me("NOTE"), String)
+                Return CType(Me("NOTE"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("NOTE") = value
             End Set
         End Property
-
-        <Global.System.Configuration.UserScopedSettingAttribute(), _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.Configuration.DefaultSettingValueAttribute("10")> _
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("10")>  _
         Public Property MAXTABLEITEMS() As String
             Get
-                Return CType(Me("MAXTABLEITEMS"), String)
+                Return CType(Me("MAXTABLEITEMS"),String)
             End Get
-            Set(value As String)
+            Set
                 Me("MAXTABLEITEMS") = value
             End Set
         End Property
@@ -133,9 +133,9 @@ Namespace My
     Friend Module MySettingsProperty
         
         <Global.System.ComponentModel.Design.HelpKeywordAttribute("My.Settings")>  _
-        Friend ReadOnly Property Settings() As Global.WindowsApplication1VBTEST_NET4.My.MySettings
+        Friend ReadOnly Property Settings() As Global.GCCPDF.My.MySettings
             Get
-                Return Global.WindowsApplication1VBTEST_NET4.My.MySettings.Default
+                Return Global.GCCPDF.My.MySettings.Default
             End Get
         End Property
     End Module

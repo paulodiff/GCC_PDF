@@ -22,7 +22,7 @@ Public Class Form1
         'Me.lblFileDiConfigurazione.Text = xmlFileName
         'MsgBox(ListBox1.Items.Count)
         If (ListBox1.Items.Count = 0) Then
-            MsgBox("Mancano i file per il calcolo...  ")
+            MsgBox("Aggiungere i file alla lista per la compilazione della copia conforme!")
             Return
         End If
 
@@ -35,7 +35,7 @@ Public Class Form1
         'Next
 
         'MsgBox(CStr(timeStamp))
-        Dim intPercent As Integer = 100 / (ListBox1.Items.Count + 1)
+        Dim intPercent As Integer = Int(100 / (ListBox1.Items.Count + 1))
         ProgressBar1.Value = 0
 
 
@@ -44,6 +44,7 @@ Public Class Form1
 
 
             LogLabel.Text = "Calcolo hash per : " + l_text
+            LogLabel.Refresh()
             ProgressBar1.Value = ProgressBar1.Value + intPercent
 
             'md5String = CreateMD5StringFromFile(l_text)
@@ -62,7 +63,8 @@ Public Class Form1
 
 
         ProgressBar1.Value = 90
-        LogLabel.Text = "Creazione pdf in corso ..."
+        LogLabel.Text = "Creazione pdf in corso ... ATTENDERE!"
+        LogLabel.Refresh()
 
         pdfFileName = folderPath + "\" + pdfFileName
 
@@ -77,7 +79,7 @@ Public Class Form1
 
         ProgressBar1.Value = 100
         LogLabel.Text = "Operazione terminata: " + pdfFileName
-        MsgBox("Operazione Terminata")
+        MsgBox("Dichiarazione Copia Conforme Generata " + vbCrLf + pdfFileName)
 
         End
 
@@ -86,15 +88,17 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-        PropertyGrid1.SelectedObject = My.Settings
+        'PropertyGrid1.SelectedObject = My.Settings
         'My.Settings.Save()
         For Each argument As String In My.Application.CommandLineArgs
             ' Add code here to use the argument. 
             ListBox1.Items.Add(argument)
             My.Settings.BatchMode = 1
+            Button1_Click(sender, e)
+
         Next
 
-        Me.lblFileDiConfigurazione.Text = My.Settings.XmlConfigFile
+        'Me.lblFileDiConfigurazione.Text = My.Settings.XmlConfigFile
 
     End Sub
 
@@ -117,7 +121,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         ReadXML()
 
     End Sub
@@ -126,10 +130,12 @@ Public Class Form1
         End
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        Hash256File(My.Settings.XmlConfigFile)
-        getTimeStamp()
-
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
+        'Hash256File(My.Settings.XmlConfigFile)
+        'getTimeStamp()
+        Dim myFirstForm As frmOptions
+        myFirstForm = New frmOptions
+        myFirstForm.Show()
     End Sub
 
     Public Sub New()
@@ -146,11 +152,25 @@ Public Class Form1
 
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
         My.Settings.Save()
     End Sub
 
     Private Sub Label2_Click_1(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim myForm As frmOptions
+        myForm = New frmOptions
+        myForm.ShowDialog()
+    End Sub
+
+    Private Sub Label2_Click_2(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
 
     End Sub
 End Class

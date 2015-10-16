@@ -49,7 +49,7 @@ Module PDF
 
         maxTableItems = My.Settings.MAXTABLEITEMS
 
-        numOfPages = d.Count / maxTableItems
+        numOfPages = Int(d.Count / maxTableItems) + 1
         globalCurTableItemIndex = 0
         localCurTableItemIndex = 0
 
