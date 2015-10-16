@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Controllare i valori degli attributi dell'assembly
 
-<Assembly: AssemblyTitle("WindowsApplication1VBTEST_NET4")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("WindowsApplication1VBTEST_NET4")> 
+<Assembly: AssemblyTitle("GCCPDF")> 
+<Assembly: AssemblyDescription("Generatore di Copia Conforme in formato PDF")> 
+<Assembly: AssemblyCompany("Comune di Rimini")> 
+<Assembly: AssemblyProduct("GCCPDF")> 
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 
 
