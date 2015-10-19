@@ -54,72 +54,51 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("sql-test")>  _
-        Public ReadOnly Property Connessione() As String
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("config.xml")> _
+        Public Property XML_CONFIG_FILE() As String
             Get
-                Return CType(Me("Connessione"),String)
+                Return CType(Me("XML_CONFIG_FILE"), String)
             End Get
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("c:\test\VS\config.xml")>  _
-        Public Property XmlConfigFile() As String
-            Get
-                Return CType(Me("XmlConfigFile"),String)
-            End Get
-            Set
-                Me("XmlConfigFile") = value
+            Set(value As String)
+                Me("XML_CONFIG_FILE") = value
             End Set
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("d:\tmp")>  _
-        Public Property DCCFolderName() As String
+
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("c:\GCCPDF_CONFIG")> _
+        Public Property DCC_FOLDER_NAME() As String
             Get
-                Return CType(Me("DCCFolderName"),String)
+                Return CType(Me("DCC_FOLDER_NAME"), String)
             End Get
-            Set
-                Me("DCCFolderName") = value
+            Set(value As String)
+                Me("DCC_FOLDER_NAME") = value
             End Set
         End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
-        Public Property BatchMode() As Integer
+
+        <Global.System.Configuration.UserScopedSettingAttribute(), _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")> _
+        Public Property BATCH_MODE() As Integer
             Get
-                Return CType(Me("BatchMode"),Integer)
+                Return CType(Me("BATCH_MODE"), Integer)
             End Get
-            Set
-                Me("BatchMode") = value
-            End Set
-        End Property
-        
-        <Global.System.Configuration.UserScopedSettingAttribute(),  _
-         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
-        Public Property NOTE() As String
-            Get
-                Return CType(Me("NOTE"),String)
-            End Get
-            Set
-                Me("NOTE") = value
+            Set(value As Integer)
+                Me("BATCH_MODE") = value
             End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("10")>  _
-        Public Property MAXTABLEITEMS() As String
+        Public Property MAX_TABLE_ITEMS() As String
             Get
-                Return CType(Me("MAXTABLEITEMS"),String)
+                Return CType(Me("MAX_TABLE_ITEMS"),String)
             End Get
             Set
-                Me("MAXTABLEITEMS") = value
+                Me("MAX_TABLE_ITEMS") = value
             End Set
         End Property
     End Class

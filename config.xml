@@ -34,20 +34,20 @@
 
      <rem>blocco in alto</rem>
      <line startX="20" startY="760" endX="550" endY="760">dummy</line>
-     <line startX="80" startY="760" endX="80" endY="720">dummy</line>
-     <line startX="240" startY="760" endX="240" endY="720">dummy</line>
-     <line startX="380" startY="760" endX="380" endY="720">dummy</line>
+     <line startX="80" startY="760" endX="80" endY="700">dummy</line>
+     <line startX="240" startY="760" endX="240" endY="700">dummy</line>
+     <line startX="380" startY="760" endX="380" endY="700">dummy</line>
 
      <text startX="85" startY="750" fontSize="8">Comune di Rimini</text>
      <text startX="245" startY="750" fontSize="8">Area XXX</text>
      <text startX="245" startY="740" fontSize="8">Settore/Servizio XXX</text>
      <text startX="245" startY="730" fontSize="8">Ufficio XXX</text>
 
-     <text startX="385" startY="750" fontSize="6">Indirizzo</text>
-     <text startX="385" startY="742" fontSize="6">Telefono</text>
-     <text startX="385" startY="734" fontSize="6">Sito</text>
-     <text startX="385" startY="726" fontSize="6">Email</text>
-     <text startX="385" startY="718" fontSize="6">Altro</text>
+     <text startX="385" startY="750" fontSize="6">Indirizzo xxx</text>
+     <text startX="385" startY="742" fontSize="6">Telefono xxx</text>
+     <text startX="385" startY="734" fontSize="6">Sito xx</text>
+     <text startX="385" startY="726" fontSize="6">Email xxx</text>
+     <text startX="385" startY="718" fontSize="6">Altro xxx</text>
 
      <text startX="100" startY="600" fontSize="10">Oggetto: Dichiarazione di conformita' all'originale della copia di atti e documenti.</text>
 

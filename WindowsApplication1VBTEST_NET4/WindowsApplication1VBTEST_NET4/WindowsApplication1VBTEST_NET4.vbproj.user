@@ -2,7 +2,7 @@
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <PublishUrlHistory>\\srv-pmlab\gabotest3\GCCPDF\|publish\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <InstallUrlHistory>\\srv-pmlab\gabotest3\GCCPDF\</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />

@@ -2,22 +2,16 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
   <Profiles />
   <Settings>
-    <Setting Name="Connessione" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">sql-test</Value>
+    <Setting Name="XML_CONFIG_FILE" Type="System.String" Scope="User">
+      <Value Profile="(Default)">config.xml</Value>
     </Setting>
-    <Setting Name="XmlConfigFile" Type="System.String" Scope="User">
-      <Value Profile="(Default)">c:\test\VS\config.xml</Value>
+    <Setting Name="DCC_FOLDER_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">c:\GCCPDF_CONFIG</Value>
     </Setting>
-    <Setting Name="DCCFolderName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">d:\tmp</Value>
-    </Setting>
-    <Setting Name="BatchMode" Type="System.Int32" Scope="User">
+    <Setting Name="BATCH_MODE" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="NOTE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="MAXTABLEITEMS" Type="System.String" Scope="User">
+    <Setting Name="MAX_TABLE_ITEMS" Type="System.String" Scope="User">
       <Value Profile="(Default)">10</Value>
     </Setting>
   </Settings>

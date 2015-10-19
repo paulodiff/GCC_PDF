@@ -109,14 +109,5 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
-        
-        '''<summary>
-        '''  Looks up a localized string similar to c:\test\1.
-        '''</summary>
-        Friend ReadOnly Property xmlConfigFile() As String
-            Get
-                Return ResourceManager.GetString("xmlConfigFile", resourceCulture)
-            End Get
-        End Property
     End Module
 End Namespace

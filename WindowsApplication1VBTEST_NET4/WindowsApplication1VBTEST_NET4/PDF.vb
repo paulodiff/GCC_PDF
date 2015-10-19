@@ -1,5 +1,6 @@
 ﻿Imports iTextSharp.text.pdf
 Imports iTextSharp.text
+Imports iTextSharp.text.html.simpleparser
 Imports System.IO
 Imports System
 Imports System.Xml
@@ -13,7 +14,7 @@ Module PDF
 
         Dim fileName As String
         Dim xmlConfigFile As String
-        Dim pdfDoc As New Document()
+        Dim pdfDoc As New iTextSharp.text.Document(PageSize.A4)
         Dim maxTableItems As Integer = 5
         Dim globalCurTableItemIndex As Integer = 0
         Dim localCurTableItemIndex As Integer = 0
@@ -24,22 +25,105 @@ Module PDF
         fileName = pdfFileName
         xmlConfigFile = xmlFileName
 
-        Console.WriteLine("================= CREATE PDF ========================")
-        Console.WriteLine("pdfFileName   :  {0}", pdfFileName)
-        Console.WriteLine("xmlFileName   :  {0}", xmlFileName)
-        Console.WriteLine("dccFolderName :  {0}", dccFolderName)
+        My.Application.Log.WriteEntry("================= CREATE PDF ========================")
+        My.Application.Log.WriteEntry("pdfFileName   :  " + pdfFileName)
+        My.Application.Log.WriteEntry("xmlFileName   :  " + xmlFileName)
+        My.Application.Log.WriteEntry("dccFolderName :  " + dccFolderName)
+
 
         Dim pdfWrite As PdfWriter
+        Dim pdfAWrite As PdfAWriter
         Dim cb As PdfContentByte
         Dim fnt As BaseFont
+        Dim icc As ICC_Profile
+        Dim bold12 As Font
+        Dim bold10 As Font
+        Dim bold8 As Font
+        Dim bold6 As Font
+        Dim normal12 As Font
+        Dim normal10 As Font
+        Dim normal8 As Font
+        Dim normal6 As Font
+        Dim styles As New StyleSheet()
+        Dim freeSansTtfFileName As String = My.Settings.DCC_FOLDER_NAME + "\FreeSans.ttf"
+        Dim freeSansTtfBoldFileName As String = My.Settings.DCC_FOLDER_NAME + "\FreeSansBold.ttf"
+        Dim profileRGBFileName As String = My.Settings.DCC_FOLDER_NAME + "\sRGB.profile"
+
+
+        ' test if TTF xmlFileName and ICM files exits
+        If My.Computer.FileSystem.FileExists(xmlFileName) = False Then
+            MsgBox("File not found:" + xmlFileName)
+            End
+        End If
+        If My.Computer.FileSystem.FileExists(freeSansTtfFileName) = False Then
+            MsgBox("File not found:" + freeSansTtfFileName)
+            End
+        End If
+        If My.Computer.FileSystem.FileExists(freeSansTtfBoldFileName) = False Then
+            MsgBox("File not found:" + freeSansTtfBoldFileName)
+            End
+        End If
+        If My.Computer.FileSystem.FileExists(profileRGBFileName) = False Then
+            MsgBox("File not found:" + profileRGBFileName)
+            End
+        End If
 
         Try
-            pdfWrite = PdfWriter.GetInstance(pdfDoc, New FileStream(fileName, FileMode.Create))
-            Console.WriteLine("Open PDF : " + fileName)
+            'pdfWrite = PdfWriter.GetInstance(pdfDoc, New FileStream(fileName, FileMode.Create))
+            'Console.WriteLine("Open PDF : " + fileName)
+            'pdfDoc.Open()
+
+            FontFactory.Register(freeSansTtfFileName)
+            styles.LoadTagStyle("body", "face", "Verdana")
+
+
+            'Create PdfAWriter with PdfAConformanceLevel.PDF_A_3B option if you
+            'want to get a PDF/A-3b compliant document.
+            pdfAWrite = PdfAWriter.GetInstance(pdfDoc, New FileStream(fileName, FileMode.Create), PdfAConformanceLevel.PDF_A_1B)
+            'Create XMP metadata. It's a PDF/A requirement.
+            pdfAWrite.PdfVersion = PdfWriter.VERSION_1_7
+            pdfAWrite.SetTagged()
+            pdfAWrite.ViewerPreferences = PdfWriter.DisplayDocTitle
+            pdfAWrite.CloseStream = False
+            pdfAWrite.InitialLeading = 12.5F
+            pdfAWrite.CompressionLevel = PdfStream.BEST_COMPRESSION
+            pdfAWrite.CreateXmpMetadata()
             pdfDoc.Open()
-            cb = pdfWrite.DirectContent
+
+            My.Application.Log.WriteEntry("Open ICM and Font ...")
+
+            icc = ICC_Profile.GetInstance(New FileStream(profileRGBFileName, FileMode.Open))
+            ' Set output intent. PDF/A requirement.
+            'icc = ICC_Profile.GetInstance(New FileStream("c:\test\VS\sRGB_Color_Space_Profile.icm", FileMode.Open))
+            pdfAWrite.SetOutputIntents("Custom", "", "http://www.color.org", "sRGB IEC61966-2.1", icc)
+
+            'Register custom font
+            'BaseFont customfont = BaseFont.CreateFont(fontpath + "myspecial.ttf", BaseFont.CP1252, BaseFont.EMBEDDED);
+            'Font font = new Font(customfont, 12);
+            'string s = "My expensive custom font.";
+            'doc.Add(new Paragraph(s, font));
+
+            'FontFactory.Register(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "ARIALUNI.TTF"), "Arial Unicode MS")
+            'Static ArialUnicode = FontFactory.GetFont("Arial Unicode MS", BaseFont.IDENTITY_H, BaseFont.EMBEDDED, 20)
+
+
+            'All fonts shall be embedded. PDF/A requirement.
+            bold12 = FontFactory.GetFont(freeSansTtfBoldFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 12)
+            bold10 = FontFactory.GetFont(freeSansTtfBoldFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 10)
+            bold8 = FontFactory.GetFont(freeSansTtfBoldFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 8)
+            bold6 = FontFactory.GetFont(freeSansTtfBoldFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 6)
+            normal12 = FontFactory.GetFont(freeSansTtfFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 12)
+            normal10 = FontFactory.GetFont(freeSansTtfFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 10)
+            normal8 = FontFactory.GetFont(freeSansTtfFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 8)
+            normal6 = FontFactory.GetFont(freeSansTtfFileName, BaseFont.WINANSI, BaseFont.EMBEDDED, 6)
+
+
+            fnt = BaseFont.CreateFont(freeSansTtfFileName, BaseFont.WINANSI, BaseFont.EMBEDDED)
+
+
+            cb = pdfAWrite.DirectContent
             'Dim cb As iTextSharp.text.pdf.PdfContentByte
-            fnt = BaseFont.CreateFont(BaseFont.HELVETICA_BOLD, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
+            'fnt = BaseFont.CreateFont(BaseFont.HELVETICA_BOLD, BaseFont.CP1252, BaseFont.NOT_EMBEDDED)
             'cb.SaveState()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -47,7 +131,7 @@ Module PDF
 
         ' puntatore ad elemento della tabella da visualizzare nel PDF
 
-        maxTableItems = My.Settings.MAXTABLEITEMS
+        maxTableItems = My.Settings.MAX_TABLE_ITEMS
 
         numOfPages = Int(d.Count / maxTableItems) + 1
         globalCurTableItemIndex = 0
@@ -185,8 +269,9 @@ Module PDF
                             'Console.WriteLine("EndElement")
                             If txtNodeType = "TEXT" Then
                                 Console.WriteLine("TEXT {0} {1} {2} {3} ", startX, startY, fontSize, text2write)
-                                cb.SetFontAndSize(fnt, fontSize)
+
                                 cb.BeginText()
+                                cb.SetFontAndSize(fnt, fontSize)
                                 cb.MoveText(startX, startY) 'Move the current point to this position
                                 cb.ShowText(text2write) 'Then write the text
                                 cb.EndText()
@@ -194,13 +279,13 @@ Module PDF
 
                             If txtNodeType = "LINE" Then
                                 Console.WriteLine("LINE {0} {1} {2} {3} ", startX, startY, endX, endY)
-                                'cb.SaveState()
+                                cb.SaveState()
                                 cb.FillStroke()
 
                                 cb.MoveTo(CDbl(startX), CDbl(startY)) ' : Move the current point to cordinates(x,y)
                                 cb.LineTo(CDbl(endX), CDbl(endY))
                                 'cb.Rectangle(CDbl(startX), CDbl(startY), CDbl(endX), CDbl(endY))
-                                'cb.RestoreState()
+                                cb.RestoreState()
                                 cb.Stroke()
                             End If
 
@@ -211,8 +296,8 @@ Module PDF
                                 Dim img As iTextSharp.text.Image = iTextSharp.text.Image.GetInstance(CStr(imgFileName)) ' double slash ?
                                 img.ScalePercent(CDbl(imgScalePercent))
                                 img.SetAbsolutePosition(CDbl(startX), CDbl(startY))
-                                'cb.AddImage(img)
-                                pdfDoc.Add(img)
+                                cb.AddImage(img)
+                                'pdfDoc.Add(img)
                                 'cb.RestoreState()
                             End If
 
@@ -239,14 +324,17 @@ Module PDF
                 Dim intTblWidth(1) As Single
 
                 intTblWidth(0) = 150.0F
-                intTblWidth(1) = 200.0F
+                intTblWidth(1) = 350.0F
 
                 table.SetWidths(intTblWidth)
+                table.SpacingBefore = 200
+                table.SpacingAfter = 200
+
 
                 'FontFactory.GetFont()
 
-                Dim fntTableFontHdr As iTextSharp.text.Font = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
-                Dim fntTableFontHdr6 As iTextSharp.text.Font = FontFactory.GetFont("Arial", 6, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
+                'Dim fntTableFontHdr As iTextSharp.text.Font = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
+                'Dim fntTableFontHdr6 As iTextSharp.text.Font = FontFactory.GetFont("Arial", 6, iTextSharp.text.Font.BOLD, BaseColor.BLACK)
                 'fntTableFontHdr()
                 'iTextSharp.text.Font fntTableFontHdr as new FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.BOLD, BaseColor.BLACK);
                 'iTextSharp.text.Font fntTableFont = FontFactory.GetFont("Arial", 8, iTextSharp.text.Font.NORMAL, BaseColor.BLACK);
@@ -260,8 +348,8 @@ Module PDF
                 'cell.HorizontalAlignment(1)
                 'table.AddCell(cell)
 
-                Dim CellOneHdr1 As PdfPCell = New PdfPCell(New Phrase("Nome file ", fntTableFontHdr))
-                Dim CellOneHdr2 As PdfPCell = New PdfPCell(New Phrase("Impronta SHA-256", fntTableFontHdr))
+                Dim CellOneHdr1 As PdfPCell = New PdfPCell(New Phrase("Nome file ", bold8))
+                Dim CellOneHdr2 As PdfPCell = New PdfPCell(New Phrase("Impronta SHA-256", bold8))
 
                 table.AddCell(CellOneHdr1)
                 table.AddCell(CellOneHdr2)
@@ -277,8 +365,8 @@ Module PDF
                             Dim fName As String = kvp.Key
                             Dim hashValue As String = kvp.Value
 
-                            Dim CellName As PdfPCell = New PdfPCell(New Phrase(fName, fntTableFontHdr))
-                            Dim CellValue As PdfPCell = New PdfPCell(New Phrase(hashValue, fntTableFontHdr6))
+                            Dim CellName As PdfPCell = New PdfPCell(New Phrase(fName, normal6))
+                            Dim CellValue As PdfPCell = New PdfPCell(New Phrase(hashValue, normal6))
 
                             table.AddCell(CellName)
                             table.AddCell(CellValue)
@@ -292,9 +380,21 @@ Module PDF
                 Next
 
                 paragraphTable1.Add(table)
-                pdfDoc.Add(paragraphTable1)
+
+                Dim myFont = New Font(fnt, 12)
+                'pdfDoc.Add(New Paragraph(New Phrase("ok", myFont)))
+                'pdfDoc.Add(New Paragraph("font ------", normal8))
+
+                'pdfDoc.Add(paragraphTable2)
+                'pdfDoc.Add(paragraphTable1)
+
+                table.SetTotalWidth(intTblWidth)
+                table.CompleteRow()
+                table.WriteSelectedRows(0, -1, 50, 500, cb)
+
 
                 'Page number
+                cb.SetFontAndSize(fnt, fontSize)
                 cb.BeginText()
                 cb.MoveText(250, 30) 'Move the current point to this position
                 cb.ShowText("Pagina n. " + CStr(i) + " di " + CStr(numOfPages)) 'Then write the text
@@ -313,7 +413,11 @@ Module PDF
             End Try
 
         Next
-
+        pdfDoc.AddTitle("")
+        pdfDoc.AddAuthor("Comune di Rimini - Ruggero Ruggeri")
+        pdfDoc.AddSubject("Generato automaticamente da GCCPDF")
+        pdfDoc.AddKeywords("")
+        pdfDoc.AddCreator("")
         pdfDoc.Close()
         Console.WriteLine("CreatePdf : Creato: {0}", fileName)
 
@@ -385,19 +489,26 @@ Module PDF
 
         ' Create a fileStream for the file.
 
-        Dim fileStream As FileStream = New FileStream(Filename, FileMode.Open)
+        Try
 
-        ' Be sure it's positioned to the beginning of the stream.
-        fileStream.Position = 0
-        ' Compute the hash of the fileStream.
-        hashValue = mySHA256.ComputeHash(fileStream)
-        ' Write the name of the file to the Console.
-        ' Console.Write(fInfo.Name + ": ")
-        ' Write the hash value to the Console.
-        strReturn = PrintByteArray(hashValue)
-        ' Close the file.
-        fileStream.Close()
+            Dim fileStream As FileStream = New FileStream(Filename, FileMode.Open)
 
+            ' Be sure it's positioned to the beginning of the stream.
+            fileStream.Position = 0
+            ' Compute the hash of the fileStream.
+            hashValue = mySHA256.ComputeHash(fileStream)
+            ' Write the name of the file to the Console.
+            ' Console.Write(fInfo.Name + ": ")
+            ' Write the hash value to the Console.
+            strReturn = PrintByteArray(hashValue)
+            ' Close the file.
+            fileStream.Close()
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return "CODICE NON CALCOLATO"
+
+        End Try
 
         Return strReturn
 

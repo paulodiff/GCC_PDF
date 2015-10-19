@@ -16,7 +16,7 @@ Public Class Form1
         Dim folderPath As String
 
         pdfFileName = "DCC" + timeStamp + ".pdf"
-        xmlFileName = My.Settings.XmlConfigFile
+        xmlFileName = My.Settings.DCC_FOLDER_NAME + "\" + My.Settings.XML_CONFIG_FILE
 
         'MsgBox("File di configurazione:" & xmlFileName)
         'Me.lblFileDiConfigurazione.Text = xmlFileName
@@ -68,6 +68,8 @@ Public Class Form1
 
         pdfFileName = folderPath + "\" + pdfFileName
 
+        My.Application.Log.WriteEntry("pdfFileName " + pdfFileName)
+
         CreatePdf(dictionary, pdfFileName, xmlFileName, folderPath)
 
         'getTimeStamp()
@@ -88,12 +90,15 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+        My.Application.Log.WriteEntry("START APPLICATION!")
+
         'PropertyGrid1.SelectedObject = My.Settings
         'My.Settings.Save()
         For Each argument As String In My.Application.CommandLineArgs
             ' Add code here to use the argument. 
             ListBox1.Items.Add(argument)
-            My.Settings.BatchMode = 1
+            My.Settings.BATCH_MODE = 1
             Button1_Click(sender, e)
 
         Next

@@ -27,6 +27,9 @@ Partial Class frmOptions
         Me.btnReadXML = New System.Windows.Forms.Button()
         Me.btnHash256 = New System.Windows.Forms.Button()
         Me.lblFileDiConfigurazione = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'PropertyGrid1
@@ -36,14 +39,14 @@ Partial Class frmOptions
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.PropertyGrid1.Location = New System.Drawing.Point(12, 12)
         Me.PropertyGrid1.Name = "PropertyGrid1"
-        Me.PropertyGrid1.Size = New System.Drawing.Size(776, 226)
+        Me.PropertyGrid1.Size = New System.Drawing.Size(776, 261)
         Me.PropertyGrid1.TabIndex = 2
         '
         'btnSaveOptions
         '
-        Me.btnSaveOptions.Location = New System.Drawing.Point(653, 289)
+        Me.btnSaveOptions.Location = New System.Drawing.Point(632, 289)
         Me.btnSaveOptions.Name = "btnSaveOptions"
-        Me.btnSaveOptions.Size = New System.Drawing.Size(116, 24)
+        Me.btnSaveOptions.Size = New System.Drawing.Size(156, 84)
         Me.btnSaveOptions.TabIndex = 13
         Me.btnSaveOptions.Text = "Salva opzioni"
         Me.btnSaveOptions.UseVisualStyleBackColor = True
@@ -51,7 +54,7 @@ Partial Class frmOptions
         'btnReadXML
         '
         Me.btnReadXML.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnReadXML.Location = New System.Drawing.Point(401, 277)
+        Me.btnReadXML.Location = New System.Drawing.Point(120, 338)
         Me.btnReadXML.Name = "btnReadXML"
         Me.btnReadXML.Size = New System.Drawing.Size(109, 36)
         Me.btnReadXML.TabIndex = 14
@@ -61,7 +64,7 @@ Partial Class frmOptions
         'btnHash256
         '
         Me.btnHash256.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btnHash256.Location = New System.Drawing.Point(240, 276)
+        Me.btnHash256.Location = New System.Drawing.Point(12, 337)
         Me.btnHash256.Name = "btnHash256"
         Me.btnHash256.Size = New System.Drawing.Size(85, 37)
         Me.btnHash256.TabIndex = 15
@@ -72,17 +75,47 @@ Partial Class frmOptions
         '
         Me.lblFileDiConfigurazione.AutoSize = True
         Me.lblFileDiConfigurazione.ForeColor = System.Drawing.Color.Red
-        Me.lblFileDiConfigurazione.Location = New System.Drawing.Point(12, 261)
+        Me.lblFileDiConfigurazione.Location = New System.Drawing.Point(12, 289)
         Me.lblFileDiConfigurazione.Name = "lblFileDiConfigurazione"
         Me.lblFileDiConfigurazione.Size = New System.Drawing.Size(106, 13)
         Me.lblFileDiConfigurazione.TabIndex = 16
         Me.lblFileDiConfigurazione.Text = "File di configurazione"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(280, 314)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(162, 13)
+        Me.Label1.TabIndex = 17
+        Me.Label1.Text = "Generatore Copia Conforme PDF"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(280, 338)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(88, 13)
+        Me.Label2.TabIndex = 18
+        Me.Label2.Text = "Ruggero Ruggeri"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(280, 360)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(226, 13)
+        Me.Label3.TabIndex = 19
+        Me.Label3.Text = "Comune di Rimini - Settore Sistema Informativo"
         '
         'frmOptions
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 385)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lblFileDiConfigurazione)
         Me.Controls.Add(Me.btnHash256)
         Me.Controls.Add(Me.btnReadXML)
@@ -99,4 +132,7 @@ Partial Class frmOptions
     Friend WithEvents btnReadXML As System.Windows.Forms.Button
     Friend WithEvents btnHash256 As System.Windows.Forms.Button
     Friend WithEvents lblFileDiConfigurazione As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

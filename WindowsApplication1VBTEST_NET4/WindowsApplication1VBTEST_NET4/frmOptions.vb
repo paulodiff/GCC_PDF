@@ -9,7 +9,7 @@
         PropertyGrid1.SelectedObject = My.Settings
         'My.Settings.Save()
 
-        Me.lblFileDiConfigurazione.Text = My.Settings.XmlConfigFile
+        Me.lblFileDiConfigurazione.Text = My.Settings.DCC_FOLDER_NAME + "\" + My.Settings.XML_CONFIG_FILE
 
     End Sub
 
@@ -19,6 +19,14 @@
     End Sub
 
     Private Sub btnHash256_Click(sender As Object, e As EventArgs) Handles btnHash256.Click
-        ReadXML()
+        'ReadXML()
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
     End Sub
 End Class
