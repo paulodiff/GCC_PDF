@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <configSections>
+        <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" >
+            <section name="GCCPDF.My.MySettings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+        </sectionGroup>
+    </configSections>
+    <system.diagnostics>
+        <sources>
+            <!-- Questa sezione definisce la configurazione di registrazione per My.Application.Log -->
+            <source name="DefaultSource" switchName="DefaultSwitch">
+                <listeners>
+                    <add name="FileLog"/>
+                    <add name="FileLogListener" />
+                    <!-- Per scrivere nel log eventi dell'applicazione, rimuovere il commento dalla sezione sottostante -->
+                    <!--<add name="EventLog"/>-->
+                </listeners>
+            </source>
+        </sources>
+        <switches>
+            <add name="DefaultSwitch" value="Information" />
+        </switches>
+        <sharedListeners>
+            <add name="FileLog"
+                 type="Microsoft.VisualBasic.Logging.FileLogTraceListener, Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                 initializeData="FileLogWriter"/>
+            <!-- Per scrivere nel log eventi dell'applicazione, rimuovere il commento dalla sezione sottostante e sostituire APPLICATION_NAME con il nome dell'applicazione -->
+            <!--<add name="EventLog" type="System.Diagnostics.EventLogTraceListener" initializeData="APPLICATION_NAME"/> -->
+          <add name="FileLogListener"
+                type="Microsoft.VisualBasic.Logging.FileLogTraceListener,  Microsoft.VisualBasic, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
+               initializeData="FileLogListenerWriter"   location="Custom"  customlocation="c:\GCCPDF_CONFIG\" />
+        </sharedListeners>
+    </system.diagnostics>
+    <userSettings>
+        <GCCPDF.My.MySettings>
+            <setting name="XML_CONFIG_FILE" serializeAs="String">
+                <value>config.xml</value>
+            </setting>
+            <setting name="DCC_FOLDER_NAME" serializeAs="String">
+                <value>c:\GCCPDF_CONFIG</value>
+            </setting>
+            <setting name="BATCH_MODE" serializeAs="String">
+                <value>0</value>
+            </setting>
+            <setting name="MAX_TABLE_ITEMS" serializeAs="String">
+                <value>10</value>
+            </setting>
+        </GCCPDF.My.MySettings>
+    </userSettings>
+</configuration>

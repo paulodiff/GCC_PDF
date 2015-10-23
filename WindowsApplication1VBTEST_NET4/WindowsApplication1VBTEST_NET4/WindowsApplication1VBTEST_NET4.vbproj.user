@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>\\srv-pmlab\gabotest3\GCCPDF\|publish\</PublishUrlHistory>
-    <InstallUrlHistory>\\srv-pmlab\gabotest3\GCCPDF\</InstallUrlHistory>
+    <PublishUrlHistory>\\srv-pmlab\software\GCCPDF\|\\srv-pmlab\gabotest3\GCCPDF\|publish\</PublishUrlHistory>
+    <InstallUrlHistory>https://pmlab.comune.rimini.it/software/GCCPDF/|\\srv-pmlab\gabotest3\GCCPDF\</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />

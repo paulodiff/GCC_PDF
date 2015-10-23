@@ -53,3 +53,4 @@ C:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Deb
 C:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\GCCPDF.exe
 C:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\GCCPDF.xml
 C:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\GCCPDF.pdb
+C:\test\VS\WindowsApplication1VBTEST_NET4\WindowsApplication1VBTEST_NET4\obj\Debug\WindowsApplication1VBTEST_NET4.vbprojResolveAssemblyReference.cache

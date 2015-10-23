@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="GCCPDF.exe" version="1.0.0.16" publicKeyToken="cdf617fc4a544fd0" language="it" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="images.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="GCCPDF" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="GCCPDF.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- Opzioni manifesto Controllo account utente
+            Se si desidera modificare il livello di Controllo account utente di Windows, sostituire il 
+            nodo requestedExecutionLevel con uno dei seguenti.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Se si specifica il nodo requestedExecutionLevel, la virtualizzazione dei file system e del Registro di sistema verrà disabilitata.
+            Se si desidera utilizzare la virtualizzazione dei file e del Registro di sistema per la 
+            compatibilità con le versioni precedenti, eliminare il nodo requestedExecutionLevel.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GCCPDF.exe" size="4315048">
+      <assemblyIdentity name="GCCPDF" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>JFkGvR35fiEB8Bt+8gEYqBhT8T8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="itextsharp.dll" size="4042752">
+      <assemblyIdentity name="itextsharp" version="5.5.7.0" publicKeyToken="8354AE6D2174DDCA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>32vZndiSM/PrIS919Y92MkTfIeQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="itextsharp.pdfa.dll" size="98304">
+      <assemblyIdentity name="itextsharp.pdfa" version="5.5.7.0" publicKeyToken="8354AE6D2174DDCA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>t0k3ffJnIFhj7pnlzJVnDJUcjaI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="itextsharp.xtra.dll" size="81920">
+      <assemblyIdentity name="itextsharp.xtra" version="5.5.7.0" publicKeyToken="8354AE6D2174DDCA" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>wsn4UVc9eyUR/ZxFOwSIuj9Tmxw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="GCCPDF.exe.config" size="2863">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hffdymfK8gZeLZ0tMPgfTDJCP+o=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="images.ico" size="32038">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>q0+SN2z3ehRLcRPJVMJCnlp7zx8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- Elenco di tutte le versioni di Windows con cui è possibile utilizzare l'applicazione. 
+     L'ambiente maggiormente compatibile verrà scelto automaticamente.-->
+      <!-- Se l'applicazione è progettata per l'uso con Windows Vista, rimuovere il commento dal seguente nodo supportedOS-->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}"></supportedOS>-->
+      <!-- Se l'applicazione è progettata per l'uso con Windows 7, rimuovere il commento dal seguente nodo supportedOS-->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}"/>-->
+      <!-- Se l'applicazione è progettata per l'uso con Windows 8, rimuovere il commento dal seguente nodo supportedOS-->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}"></supportedOS>-->
+      <!-- Se l'applicazione è progettata per l'uso con Windows 8.1, rimuovere il commento dal seguente nodo supportedOS-->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}"/>-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=D_PRO_RN\ruggerir" issuerKeyHash="193a3694ae39d20c0ac7b7344d4f8aeeb69fc964" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>2IuN2KXf55ecCS4hWTFe0/0Y7CA=</DigestValue></Reference></SignedInfo><SignatureValue>nlo4pnfxStT8/dmLtpeXkZoRgqYNO4cckCqYYTvKdAEa4QqXdTGQ48Jgj9YpphQd5QfqFXyMLQqo1pfoK4Fx0HvccsGMiHEijpqRLolVlnBYmbVpAcey0Wx5GVQEDkb32OfIDkAYJphsSH0egxTzgwFdN9O60BM0rC/KKL6QjFU=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>wBh9ulx3iIc8x8AcmFZ/lDEV2xlq2MhyrRr0fdzYR4/WpvcdUsD147yN2M5+dYditZAS3QIc5A/bRgy71KHP/ridHrGy5BLzsprzrnBx0mvnTVxc7dth/1g0cTbhL2MFa2MGbBzu8fq8/baAnDGRkvetmWhgsqI8yj68qahugwE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="20ec18fdd35e3159212e099c97e7dfa5d88d8bd8" Description="" Url=""><as:assemblyIdentity name="GCCPDF.exe" version="1.0.0.16" publicKeyToken="cdf617fc4a544fd0" language="it" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=D_PRO_RN\ruggerir</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" /><DigestValue>2Ax4LiAlKrvL2/7tzXzeTeCDQes=</DigestValue></Reference></SignedInfo><SignatureValue>dizUwrZwAGvk6b172Mf5B+XEpNvMVFeGdAac8FvfE/rl1SW5iiXnWpi+4ZfQ1Jvo6TLyABG8osfeBFmwROBHd5hTeD4pf6Jds2xQYXPiGr0kNb0v40/2jz2ibXYq0XxbzZ16dFlIQUkkn/Tq/SMo/AIP2oNvEvCEpyyzS+nOSxA=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>wBh9ulx3iIc8x8AcmFZ/lDEV2xlq2MhyrRr0fdzYR4/WpvcdUsD147yN2M5+dYditZAS3QIc5A/bRgy71KHP/ridHrGy5BLzsprzrnBx0mvnTVxc7dth/1g0cTbhL2MFa2MGbBzu8fq8/baAnDGRkvetmWhgsqI8yj68qahugwE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB3TCCAUagAwIBAgIQY/3W/XHEFIhHGY41KANyazANBgkqhkiG9w0BAQUFADAtMSswKQYDVQQDHiIARABfAFAAUgBPAF8AUgBOAFwAcgB1AGcAZwBlAHIAaQByMB4XDTE1MDkyODEyMDgzOFoXDTE2MDkyNzE4MDgzOFowLTErMCkGA1UEAx4iAEQAXwBQAFIATwBfAFIATgBcAHIAdQBnAGcAZQByAGkAcjCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEAwBh9ulx3iIc8x8AcmFZ/lDEV2xlq2MhyrRr0fdzYR4/WpvcdUsD147yN2M5+dYditZAS3QIc5A/bRgy71KHP/ridHrGy5BLzsprzrnBx0mvnTVxc7dth/1g0cTbhL2MFa2MGbBzu8fq8/baAnDGRkvetmWhgsqI8yj68qahugwECAwEAATANBgkqhkiG9w0BAQUFAAOBgQA0ZB4bg92Okmr7oNfxOPh0g6Dnkn9MUsdm6TZURSCtr/a1syRDHDui69ptCWHFXlaKyqy3jWLtawP/HtqjZlafK2kVY5+uZeBL1VRMWxvqqBldUozUNXVtMU+PIvUZW6Z8ffSvMTyoz/OHKY9rXRm7aI2McPaTjB4sGqJqGopfcA==</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

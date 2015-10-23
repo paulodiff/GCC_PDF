@@ -53,11 +53,13 @@ Public Class Form1
             Console.WriteLine("Calcolo HASH per : {0} : {1} ", l_text, sha256String)
             testFile = My.Computer.FileSystem.GetFileInfo(l_text)
             folderPath = testFile.DirectoryName
+            'Dim lastWriteTime = testFile.LastWriteTimeUtc
+            'Dim fileSize As String = CStr(testFile.Length)
             'MsgBox(folderPath)
             Dim fileName As String = testFile.Name
             'MsgBox(fileName)
 
-            dictionary.Add(fileName, sha256String)
+            dictionary.Add(fileName, "SHA-256:" + sha256String + vbCrLf + "Data ultima modifica (UTC):" + CStr(testFile.LastWriteTimeUtc) + vbCrLf + "Dimensione (bytes):" + CStr(testFile.Length))
         Next
 
 

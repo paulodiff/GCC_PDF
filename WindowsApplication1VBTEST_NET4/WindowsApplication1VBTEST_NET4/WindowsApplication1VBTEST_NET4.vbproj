@@ -12,10 +12,10 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>\\srv-pmlab\gabotest3\GCCPDF\</PublishUrl>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>\\srv-pmlab\software\GCCPDF\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Unc</InstallFrom>
+    <InstallFrom>Web</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -23,13 +23,14 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\srv-pmlab\gabotest3\GCCPDF\</InstallUrl>
+    <InstallUrl>https://pmlab.comune.rimini.it/software/GCCPDF/</InstallUrl>
     <TargetCulture>it</TargetCulture>
     <ProductName>GCCPDF - Generatore di Copia Conforme in formato PDF</ProductName>
     <PublisherName>Comune di Rimini</PublisherName>
     <SuiteName>GCCPDF</SuiteName>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

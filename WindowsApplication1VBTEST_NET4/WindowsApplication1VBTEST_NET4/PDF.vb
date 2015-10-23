@@ -348,8 +348,8 @@ Module PDF
                 'cell.HorizontalAlignment(1)
                 'table.AddCell(cell)
 
-                Dim CellOneHdr1 As PdfPCell = New PdfPCell(New Phrase("Nome file ", bold8))
-                Dim CellOneHdr2 As PdfPCell = New PdfPCell(New Phrase("Impronta SHA-256", bold8))
+                Dim CellOneHdr1 As PdfPCell = New PdfPCell(New Phrase("Nome file", bold8))
+                Dim CellOneHdr2 As PdfPCell = New PdfPCell(New Phrase("Impronta ed altre informazioni", bold8))
 
                 table.AddCell(CellOneHdr1)
                 table.AddCell(CellOneHdr2)
